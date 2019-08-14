@@ -74,7 +74,17 @@
 					</args>
 				</emailbrain>
 			</routers>
-		    </admin><adminhtml>
+	</admin>
+	<adminhtml>
+	<translate>
+            <modules>
+                <Module_Emailbrain>
+                    <files>
+                        <default>Module_Emailbrain.csv</default>
+                    </files>
+                </Module_Emailbrain>
+            </modules>
+        </translate>
 		<menu>
 			<emailbrain module="emailbrain">
 				<title>EmailBrain</title>

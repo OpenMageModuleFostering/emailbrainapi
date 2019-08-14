@@ -46,7 +46,7 @@ text-decoration:none;
        	<div id="messages"><ul class="messages">
         <?php if($_SESSION['mailinglist'])
                {
-	         echo '<li class="success-msg">Account Information has been saved.</li></ul></li>';
+	         echo '<li class="success-msg">'.$this->__('Account Information has been saved.').'</li></ul></li>';
 	       }   
 	else if(isset($_SESSION['message'])){ ?>
         <?php echo $_SESSION['message']?>
@@ -65,8 +65,8 @@ text-decoration:none;
     	<h3 class="icon-head head-system-account">EmailBrain</h3> 
 		<?php $_key=explode('/',$_SERVER['REQUEST_URI']);$c=count($_key);$_key=$_key[$c-2];?>   
 		<p class="form-buttons">
-			<a href="<?php echo $this->getUrl('*/*/reset')?>"><button style="" class="scalable " type="button" id="id_<?php echo $_key?>"><span>Reset</span></button></a>
-			<button style="" onclick="editForm.submit();" class="scalable save" type="button" id="id_<?php echo $_key?>"><span>Save Account</span></button>
+			<a href="<?php echo $this->getUrl('*/*/reset')?>"><button style="" class="scalable " type="button" id="id_<?php echo $_key?>"><span><?php echo $this->__('Reset');?></span></button></a>
+			<button style="" onclick="editForm.submit();" class="scalable save" type="button" id="id_<?php echo $_key?>"><span><?php echo $this->__('Save Account');?></span></button>
 			
 			
 			                                                        
@@ -77,7 +77,7 @@ text-decoration:none;
 	<div class="entry-edit">
 	
 		<form id="edit_form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"><div><input type="hidden" name="form_key" value="<? echo $this->getFormKey(); ?>" /></div><div class="entry-edit-head">
-    	<h4 class="icon-head head-edit-form fieldset-legend">Account Information</h4>
+    	<h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Account Information');?></h4>
     	<div class="form-buttons"></div>
 	</div>
     <div id="base_fieldset" class="fieldset ">
@@ -85,23 +85,23 @@ text-decoration:none;
                         <table cellspacing="0" class="form-list">
             <tbody>
 			  <tr>
-        <td class="label"><label for="userame">EmailBrain Domain <span class="required">*</span></label></td>
+        <td class="label"><label for="userame"><?php echo $this->__('EmailBrain Domain');?><span class="required">*</span></label></td>
     <td class="value">
         <input <?php echo $readonly?> type="text" class=" input-text required-entry" title="Enter EmailBrain Domain" value="<?php echo isset($_SESSION['EmailAccount'])?$_SESSION['EmailAccount'][0][domain]:''?>" name="domain" id="domain">            </td>
     </tr>
                 <tr>
-        <td class="label"><label for="userame">EmailBrain Username <span class="required">*</span></label></td>
+        <td class="label"><label for="userame"><?php echo $this->__('EmailBrain Username');?> <span class="required">*</span></label></td>
     <td class="value">
         <input <?php echo $readonly?> type="text" class=" input-text required-entry" title="User Name" value="<?php echo isset($_SESSION['EmailAccount'])?$_SESSION['EmailAccount'][0][username]:''?>" name="username" id="api_user">            </td>
     </tr>
 <tr>
-        <td class="label"><label for="firstname">EmailBrain Password <span class="required">*</span></label></td>
+        <td class="label"><label for="firstname"><?php echo $this->__('EmailBrain Password');?><span class="required">*</span></label></td>
     <td class="value">
         <input <?php echo $readonly?> type="password" class=" input-text required-entry" title="Password" value="<?php echo isset($_SESSION['EmailAccount'])?$_SESSION['EmailAccount'][0][password]:''?>" name="password" id="firstname">            </td>
     </tr>
 <?php if($_SESSION['mailinglist']):?>
 <tr>
-	<td class="label"><label for="firstname">EmailBrain Malling List</label></td>
+	<td class="label"><label for="firstname"><?php echo $this->__('EmailBrain Malling List');?></label></td>
 	<td class="value">
 	<?php echo $_SESSION['mailinglist']?>
     </td>	

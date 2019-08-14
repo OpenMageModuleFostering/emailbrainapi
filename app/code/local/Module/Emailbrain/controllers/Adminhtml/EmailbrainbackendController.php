@@ -77,7 +77,7 @@ class Module_Emailbrain_Adminhtml_EmailbrainbackendController extends Mage_Admin
 		if($condt==1)
 		{
 			$fields.=" ,dataset_id='$data[dataset_id]',maillist_id='$data[maillist_id]'";
-			$message='<li class="error-msg">Authentication failed.Check username and password.</li></ul></li>';
+			$message='<li class="error-msg">'.$this->__('Authentication failed.Check username and password.').'</li></ul></li>';
 		}
 		$fields.=" ,dataset_id='$data[dataset_id]',maillist_id='$data[maillist_id]'";
 		$query="UPDATE emailbrain_account SET ".$fields;
