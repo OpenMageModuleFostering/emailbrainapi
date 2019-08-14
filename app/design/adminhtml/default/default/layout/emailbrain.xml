@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+<emailbrain_adminhtml_emailbrainbackend_index>
+			<reference name="content">
+				<block type="emailbrain/adminhtml_emailbrainbackend" name="emailbrainbackend" template="emailbrain/emailbrainbackend.phtml"/>
+			</reference>
+		</emailbrain_adminhtml_emailbrainbackend_index>
+</layout>

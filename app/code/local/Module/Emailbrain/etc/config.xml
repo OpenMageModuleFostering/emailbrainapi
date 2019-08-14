@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<config>
+      <modules>
+        <Module_Emailbrain>
+          <version>0.1.0</version>
+        </Module_Emailbrain>
+      </modules>
+
+	<frontend>
+        <routers>
+            <customer>
+                <args>
+                    <modules>
+                        <module_emailbrain before="Mage_Customer">Module_Emailbrain</module_emailbrain>
+                    </modules>
+                </args>
+            </customer>
+        </routers>
+    </frontend>
+
+	<frontend>
+        <routers>
+            <newsletter>
+                <args>
+                    <modules>
+                        <module_emailbrain before="Mage_Newsletter">Module_Emailbrain</module_emailbrain>
+                    </modules>
+                </args>
+            </newsletter>
+        </routers>
+    </frontend>
+	  
+   <global>
+
+   
+   
+      <helpers>
+       <emailbrain>
+           <class>Module_Emailbrain_Helper</class>
+       </emailbrain>
+      </helpers>   
+
+	  <blocks><emailbrain><class>Module_Emailbrain_Block</class></emailbrain></blocks>
+	       <resources>
+            <emailbrain_setup>
+                <setup>
+                    <module>Module_Emailbrain</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </emailbrain_setup>
+            <emailbrain_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </emailbrain_write>
+            <emailbrain_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </emailbrain_read>
+			
+        </resources>
+	 
+   </global> 
+   <admin>
+			<routers>
+				<emailbrain>
+					<use>admin</use>
+					<args>
+						<module>Module_Emailbrain</module>
+						<frontName>emailbrain</frontName>
+					</args>
+				</emailbrain>
+			</routers>
+		    </admin><adminhtml>
+		<menu>
+			<emailbrain module="emailbrain">
+				<title>EmailBrain</title>
+				<sort_order>100</sort_order>
+				<children>
+				<emailbrainbackend module="emailbrain">
+						<title>EmailBrain Setting</title>
+						<sort_order>0</sort_order>
+						<action>emailbrain/adminhtml_emailbrainbackend</action>
+					</emailbrainbackend>
+				</children>
+			</emailbrain>
+		</menu>
+		<acl>
+			<resources>
+				<all>
+				    <title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<emailbrain translate="title" module="emailbrain">
+							<title>EmailBrain</title>
+							<sort_order>1000</sort_order>
+							<children>
+                                <emailbrainbackend translate="title">
+									<title>EmailBrain Setting</title>
+								</emailbrainbackend>
+							</children>
+					   </emailbrain>
+					</children>
+				</admin>
+
+			</resources>
+		</acl>
+
+		<layout>
+			<updates>
+				<emailbrain>
+				    <file>emailbrain.xml</file>
+				</emailbrain>
+			</updates>
+		</layout>
+	</adminhtml>
+
+</config> 
