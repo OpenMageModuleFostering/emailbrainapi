@@ -1,3 +1,5 @@
+
+
 ## Original Package Description
 
 Grow  your mailing list through Magento transactions! Every time someone registers to buy from your online shop or service via Magento, ask them to opt in to your EmailBrain newsletter. This way, you can send them targeted newsletters, i.e. notify them of new specials, good deals, or new products.
